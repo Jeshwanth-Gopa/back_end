@@ -41,7 +41,7 @@ def meetings_ahead(namespace, days_ahead, ring_before):
                     "id":      hashlib.sha256(st.encode()).hexdigest()
                 })
         except Exception as e:
-            print(f"2 Error with {account.DisplayName}: {e}")
+            print(f"Error with {account.DisplayName}: {e}")
     # print(meetings)
     meet_before = get_meetings_config()
     for m in meetings:
