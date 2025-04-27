@@ -36,9 +36,10 @@ def set_ring_before_route():
         ring_before = int(request.json.get('ring_before', 5))
         set_ring_before(ring_before)
         set_meetings_config([])
+        _ = get_meetings()
         return jsonify(status="success", message="Ring before time updated.")
     except Exception as e:
-        return jsonify(status="error1", message=str(e))
+        return jsonify(status="error", message=str(e))
 
 @app.route('/set_days_ahead', methods=['POST'])
 def set_days_ahead_route():
@@ -46,5 +47,20 @@ def set_days_ahead_route():
         days_ahead = int(request.json.get('days_ahead', 10))
         set_days_ahead(days_ahead)
         return jsonify(status="success", message="Days ahead updated.")
+    except Exception as e:
+        return jsonify(status="error1", message=str(e))
+
+@app.route('/set_alarm_particular_meeting', methods=['POST'])
+def set_alarm_particular_meeting_route():
+    try:
+        meeting_id = request.json.get('id')
+        ring_at = request.json.get('ring_at')
+        meetings = get_meetings_config()
+        for m in meetings:
+            if m["id"] == meeting_id:
+                m["ring_at"] = ring_at
+                break
+        set_meetings_config(meetings)
+        return jsonify(status="success", message="Alarm set for the particular meeting.")
     except Exception as e:
         return jsonify(status="error1", message=str(e))
