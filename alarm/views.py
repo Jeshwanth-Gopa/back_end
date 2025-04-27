@@ -1,4 +1,4 @@
-import win32com.client, hashlib, pywintypes
+import hashlib
 from datetime import datetime, timedelta
 from alarm.config_handler import get_days_ahead, get_ring_before, get_meetings_config, set_meetings_config
 
@@ -8,13 +8,12 @@ def remove_timezone(dt):
 def convert_dtypes_to_strings(meetings):
     return [{str(k): str(v) for k,v in m.items()} for m in meetings]
 
-def convert_pywindtypes_to_dtypes(meetings):
+def check_meetings(meetings):
+    now = datetime.now()
     for m in meetings:
-        for k, v in m.items():
-            if type(v) is pywintypes.TimeType:
-                m[k] = datetime.combine(v.date(), v.time())
+        if m["ring_at"] < now:
+            meetings.remove(m)
     return meetings
-
 
 def meetings_ahead(namespace, days_ahead, ring_before):
     now      = datetime.now()
@@ -43,7 +42,7 @@ def meetings_ahead(namespace, days_ahead, ring_before):
                 })
         except Exception as e:
             print(f"2 Error with {account.DisplayName}: {e}")
-    print(meetings)
+    # print(meetings)
     meet_before = get_meetings_config()
     for m in meetings:
         for mb in meet_before:
@@ -51,8 +50,8 @@ def meetings_ahead(namespace, days_ahead, ring_before):
                 m["ring_at"] = mb["ring_at"]
                 break
 
-    # meetings = convert_pywindtypes_to_dtypes(meetings)
-    print(meetings)
+    # print(meetings)
+    check_meetings(meetings)
     meetings.sort(key=lambda x: x["ring_at"])
     set_meetings_config(meetings)
     return meetings

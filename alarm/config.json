@@ -1,5 +1,5 @@
 {
-    "ring_before": 5,
+    "ring_before": 7,
     "days_ahead": 10,
     "meetings": [
         {
@@ -7,7 +7,7 @@
             "start": "2025-04-28T09:00:00",
             "end": "2025-04-28T09:30:00",
             "account": "JGopa@technocratsdomain.com",
-            "ring_at": "2025-04-28T08:55:00",
+            "ring_at": "2025-04-28T08:53:00",
             "id": "7d98847d98e66601d40fae1222d8a13c4ef757effe815341fe4cb6d9f2df9a0b"
         },
         {
@@ -15,7 +15,7 @@
             "start": "2025-04-29T10:00:00",
             "end": "2025-04-29T10:30:00",
             "account": "JGopa@technocratsdomain.com",
-            "ring_at": "2025-04-29T09:55:00",
+            "ring_at": "2025-04-29T09:53:00",
             "id": "1e8fbcaff4d9919a15c3856754c6b5642588aa90910a9d04889694d7ceafe2bb"
         },
         {
@@ -23,8 +23,16 @@
             "start": "2025-04-29T13:30:00",
             "end": "2025-04-29T14:00:00",
             "account": "JGopa@technocratsdomain.com",
-            "ring_at": "2025-04-29T13:25:00",
+            "ring_at": "2025-04-29T13:23:00",
             "id": "096aff7f205186136c6e68b9c442c07bcce1d6a5990f0e968c195209b173b56f"
+        },
+        {
+            "subject": "bgr",
+            "start": "2025-05-06T15:00:00",
+            "end": "2025-05-06T15:30:00",
+            "account": "JGopa@technocratsdomain.com",
+            "ring_at": "2025-05-06T14:53:00",
+            "id": "ef7758d9ae2fbfd0efdffa6bc123cfc45abb4cae1bcd81bcbcebe1d8f33d8162"
         }
     ]
 }

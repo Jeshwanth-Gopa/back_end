@@ -29,6 +29,18 @@ def get_days_ahead():
     with open(CONFIG_FILE, "r") as f:
         return json.load(f).get("days_ahead", 10)
 
+def set_days_ahead(days):
+    try:
+        with open(CONFIG_FILE, "r") as f:
+            config = json.load(f)
+    except (FileNotFoundError, json.JSONDecodeError):
+        config = {}
+    
+    config["days_ahead"] = days
+
+    with open(CONFIG_FILE, "w") as f:
+        json.dump(config, f, indent=4)
+
 def get_meetings_config():
     if not os.path.exists(CONFIG_FILE):
         return []
