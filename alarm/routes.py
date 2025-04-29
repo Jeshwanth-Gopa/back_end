@@ -17,7 +17,7 @@ def get_meetings():
         namespace = outlook.GetNamespace("MAPI")
         print(get_days_ahead(), get_ring_before())
         meetings = meetings_ahead(namespace, days_ahead=get_days_ahead(), ring_before=get_ring_before())
-        return jsonify(status="success", meetings=convert_dtypes_to_strings(meetings[:5]))
+        return jsonify(status="success", meetings=convert_dtypes_to_strings(meetings))
     except Exception as e:
         return jsonify(status="error1", message=str(e))
 

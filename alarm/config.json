@@ -3,28 +3,44 @@
     "days_ahead": 10,
     "meetings": [
         {
-            "subject": "wrrfc",
-            "start": "2025-04-28T09:00:00",
-            "end": "2025-04-28T09:30:00",
+            "subject": "ewf",
+            "start": "2025-04-30T11:00:00",
+            "end": "2025-04-30T11:30:00",
             "account": "JGopa@technocratsdomain.com",
-            "ring_at": "2025-04-28T08:55:00",
-            "id": "7d98847d98e66601d40fae1222d8a13c4ef757effe815341fe4cb6d9f2df9a0b"
+            "ring_at": "2025-04-30T10:55:00",
+            "id": "ec50ad63f87dd4272ed8286208138f774ff10e4897a93e53dc3c6ab7d73b7bb7"
         },
         {
-            "subject": "sdv",
-            "start": "2025-04-29T10:00:00",
-            "end": "2025-04-29T10:30:00",
+            "subject": "tgr",
+            "start": "2025-04-30T13:30:00",
+            "end": "2025-04-30T14:00:00",
             "account": "JGopa@technocratsdomain.com",
-            "ring_at": "2025-04-29T09:55:00",
-            "id": "1e8fbcaff4d9919a15c3856754c6b5642588aa90910a9d04889694d7ceafe2bb"
+            "ring_at": "2025-04-30T13:25:00",
+            "id": "b374f2ab7bb69e1db1ec07b9400fc9226eb64949b6da35924ded2e92078bc4c3"
         },
         {
-            "subject": "f f g",
-            "start": "2025-04-29T13:30:00",
-            "end": "2025-04-29T14:00:00",
+            "subject": "trgv",
+            "start": "2025-05-01T11:00:00",
+            "end": "2025-05-01T11:30:00",
             "account": "JGopa@technocratsdomain.com",
-            "ring_at": "2025-04-29T13:25:00",
-            "id": "096aff7f205186136c6e68b9c442c07bcce1d6a5990f0e968c195209b173b56f"
+            "ring_at": "2025-05-01T10:55:00",
+            "id": "fd69aee733d42177ed6889eb786f8070ea4ba32c0d08ffafe4c365e33077a248"
+        },
+        {
+            "subject": "ger",
+            "start": "2025-05-01T13:30:00",
+            "end": "2025-05-01T14:00:00",
+            "account": "JGopa@technocratsdomain.com",
+            "ring_at": "2025-05-01T13:25:00",
+            "id": "5c8406480e526081aaa4a8ffb738dd4f9446e227e8f19dc88d05fb71a2bd253d"
+        },
+        {
+            "subject": "fvedt",
+            "start": "2025-05-01T15:00:00",
+            "end": "2025-05-01T15:30:00",
+            "account": "JGopa@technocratsdomain.com",
+            "ring_at": "2025-05-01T14:55:00",
+            "id": "d297ddec792382c82625c601ef16699cdfad94145780914af202b08156d04a3a"
         },
         {
             "subject": "bgr",
