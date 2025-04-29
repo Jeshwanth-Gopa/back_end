@@ -1,13 +1,14 @@
 {
-    "ring_before": 5,
-    "days_ahead": 10,
+    "ring_before": 10,
+    "days_ahead": 3,
+    "num": 10,
     "meetings": [
         {
             "subject": "ewf",
             "start": "2025-04-30T11:00:00",
             "end": "2025-04-30T11:30:00",
             "account": "JGopa@technocratsdomain.com",
-            "ring_at": "2025-04-30T10:55:00",
+            "ring_at": "2025-04-30T10:50:00",
             "id": "ec50ad63f87dd4272ed8286208138f774ff10e4897a93e53dc3c6ab7d73b7bb7"
         },
         {
@@ -15,7 +16,7 @@
             "start": "2025-04-30T13:30:00",
             "end": "2025-04-30T14:00:00",
             "account": "JGopa@technocratsdomain.com",
-            "ring_at": "2025-04-30T13:25:00",
+            "ring_at": "2025-04-30T13:20:00",
             "id": "b374f2ab7bb69e1db1ec07b9400fc9226eb64949b6da35924ded2e92078bc4c3"
         },
         {
@@ -23,7 +24,7 @@
             "start": "2025-05-01T11:00:00",
             "end": "2025-05-01T11:30:00",
             "account": "JGopa@technocratsdomain.com",
-            "ring_at": "2025-05-01T10:55:00",
+            "ring_at": "2025-05-01T10:50:00",
             "id": "fd69aee733d42177ed6889eb786f8070ea4ba32c0d08ffafe4c365e33077a248"
         },
         {
@@ -31,7 +32,7 @@
             "start": "2025-05-01T13:30:00",
             "end": "2025-05-01T14:00:00",
             "account": "JGopa@technocratsdomain.com",
-            "ring_at": "2025-05-01T13:25:00",
+            "ring_at": "2025-05-01T13:20:00",
             "id": "5c8406480e526081aaa4a8ffb738dd4f9446e227e8f19dc88d05fb71a2bd253d"
         },
         {
@@ -39,16 +40,8 @@
             "start": "2025-05-01T15:00:00",
             "end": "2025-05-01T15:30:00",
             "account": "JGopa@technocratsdomain.com",
-            "ring_at": "2025-05-01T14:55:00",
+            "ring_at": "2025-05-01T14:50:00",
             "id": "d297ddec792382c82625c601ef16699cdfad94145780914af202b08156d04a3a"
-        },
-        {
-            "subject": "bgr",
-            "start": "2025-05-06T15:00:00",
-            "end": "2025-05-06T15:30:00",
-            "account": "JGopa@technocratsdomain.com",
-            "ring_at": "2025-05-06T14:55:00",
-            "id": "ef7758d9ae2fbfd0efdffa6bc123cfc45abb4cae1bcd81bcbcebe1d8f33d8162"
         }
     ]
 }
