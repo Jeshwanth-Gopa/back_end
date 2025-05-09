@@ -1,6 +1,8 @@
 from flask import jsonify, request
 from alarm import app
+from alarm import scheduler
 from alarm.views import meetings_ahead, convert_dtypes_to_strings
+from alarm.popup_views import remove_all_jobs, add_jobs, edit_job
 from alarm.config_handler import *
 import win32com.client
 import pythoncom
@@ -15,8 +17,10 @@ def get_meetings():
         pythoncom.CoInitialize()
         outlook = win32com.client.Dispatch("Outlook.Application")
         namespace = outlook.GetNamespace("MAPI")
-        print(get_days_ahead(), get_ring_before())
+        # print(get_days_ahead(), get_ring_before())
         meetings = meetings_ahead(namespace, days_ahead=get_days_ahead(), ring_before=get_ring_before())
+        remove_all_jobs(scheduler)
+        add_jobs(scheduler, meetings)
         return jsonify(status="success", meetings=convert_dtypes_to_strings(meetings[:get_num()]))
     except Exception as e:
         return jsonify(status="error1", message=str(e))
@@ -29,7 +33,7 @@ def next_meeting():
         return jsonify(status="success", meeting=convert_dtypes_to_strings([meetings[0]]))
     except Exception as e:
         return jsonify(status="error1", message=str(e))
-
+    
 @app.route('/set_num_meetings', methods=['POST'])
 def set_num_meetings_route():
     try:
@@ -59,11 +63,12 @@ def set_ring_before_route():
     except Exception as e:
         return jsonify(status="error", message=str(e))
 
-@app.route('/get_days_ahead', methods=['GET'])
-def get_days_ahead_route():
+@app.route('/get_days_ahead_meeting_limit', methods=['GET'])
+def get_days_ahead_meeting_limit_route():
     try:
         days_ahead = get_days_ahead()
-        return jsonify(status="success", days_ahead=days_ahead)
+        num_meetings = get_num()
+        return jsonify(status="success", days_ahead=days_ahead, num_meetings=num_meetings)
     except Exception as e:
         return jsonify(status="error1", message=str(e))
     
@@ -81,10 +86,13 @@ def set_alarm_particular_meeting_route():
     try:
         meeting_id = request.json.get('id')
         ring_at = request.json.get('ring_at')
+        # print("inside try",request.json, meeting_id, ring_at)
         meetings = get_meetings_config()
-        for m in meetings:
-            if m["id"] == meeting_id:
-                m["ring_at"] = ring_at
+        for meeting in meetings:
+            if meeting["id"] == meeting_id:
+                meeting["ring_at"] = datetime.fromisoformat(ring_at)
+                # print(meeting, meeting_id, ring_at)
+                edit_job(scheduler, meeting_id, meeting)
                 break
         set_meetings_config(meetings)
         return jsonify(status="success", message="Alarm set for the particular meeting.")

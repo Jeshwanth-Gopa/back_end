@@ -2,6 +2,7 @@ import hashlib
 from datetime import datetime, timedelta
 from alarm.config_handler import get_days_ahead, get_ring_before, get_meetings_config, set_meetings_config
 
+
 def remove_timezone(dt):
     return dt.replace(tzinfo=None) if dt.tzinfo else dt
 
@@ -55,3 +56,4 @@ def meetings_ahead(namespace, days_ahead, ring_before):
     meetings.sort(key=lambda x: x["ring_at"])
     set_meetings_config(meetings)
     return meetings
+
